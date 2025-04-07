@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto w-full;
+  }
+
+  section {
+    @apply min-h-screen w-full flex justify-center;
+  }
+}
