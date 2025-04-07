@@ -17,6 +17,7 @@ const TeamMember = ({ id, name, role, description, image, delay }) => {
           <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors">{name}</h3>
           <p className="text-gray-700 dark:text-gray-300">{role}</p>
           <p className="mt-4 text-gray-600 dark:text-gray-400">{description}</p>
+
         </div>
       </Link>
     </div>

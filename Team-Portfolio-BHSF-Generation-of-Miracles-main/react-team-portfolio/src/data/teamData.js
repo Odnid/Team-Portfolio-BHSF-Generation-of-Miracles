@@ -1,10 +1,10 @@
 const teamData = [
   {
-    id: 'john-doe',
-    name: 'John Doe',
+    id: 'd-dominguez',
+    name: 'Dindo Dominguez',
     role: 'Lead Developer',
     description: 'Passionate about creating scalable and efficient solutions.',
-    image: '/images/Odnid.jpg',
+    image: '/img/dominguez.jpg',
     skills: {
       technical: [
         'Full-stack Development (Node.js, React, Python)',
@@ -31,11 +31,11 @@ const teamData = [
     ]
   },
   {
-    id: 'jane-smith',
-    name: 'Jane Smith',
+    id: 'a-aguilon',
+    name: 'Adriane Aguilon',
     role: 'UI/UX Designer',
     description: 'Creating beautiful and intuitive user experiences.',
-    image: '/images/Adrianne.jpg',
+    image: '/img/aguilon.jpg',
     skills: {
       design: [
         'User Interface Design',
@@ -62,11 +62,11 @@ const teamData = [
     ]
   },
   {
-    id: 'mike-johnson',
-    name: 'Mike Johnson',
+    id: 'g-dawal',
+    name: 'Giullian Marco Dawal',
     role: 'Backend Developer',
     description: 'Building robust and scalable backend solutions.',
-    image: '/images/bolyanw.jpg',
+    image: '/img/dawal.jpg',
     skills: {
       technical: [
         'API Development',
@@ -93,11 +93,11 @@ const teamData = [
     ]
   },
   {
-    id: 'sarah-wilson',
-    name: 'Sarah Wilson',
+    id: 'f-factor',
+    name: 'Francis Factor',
     role: 'Frontend Developer',
     description: 'Crafting responsive and user-friendly interfaces.',
-    image: '/images/Francis.jpg',
+    image: '/img/factor.jpg',
     skills: {
       technical: [
         'Modern JavaScript Frameworks',
@@ -124,11 +124,11 @@ const teamData = [
     ]
   },
   {
-    id: 'alex-chen',
-    name: 'Alex Chen',
+    id: 'a-moral',
+    name: 'Andrie Moral',
     role: 'DevOps Engineer',
     description: 'Ensuring smooth and efficient deployment processes.',
-    image: '/images/morant.jpg',
+    image: '/img/moral.jpg',
     skills: {
       technical: [
         'CI/CD Pipeline Implementation',

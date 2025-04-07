@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-3xl mx-auto px-4">
           <h1 
-            className="text-5xl font-display font-bold mb-8 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent" 
+            className="text-4xl font-display font-bold mb-8 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent" 
             data-aos="fade-up"
           >
             Meet Our Amazing Team

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const TeamMemberDetail = ({ name, role, description, image }) => {
+const TeamMemberDetail = ({ name, role, description, image, skills }) => {
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -34,6 +34,19 @@ const TeamMemberDetail = ({ name, role, description, image }) => {
                 <h2 className="text-xl text-primary-500 dark:text-primary-400 mb-6">{role}</h2>
                 <div className="prose dark:prose-invert max-w-none">
                   <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">{description}</p>
+                  <div className="mt-4 text-left">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Technical Skills</h3>
+                    <ul className="list-disc pl-6 space-y-2">
+                      {skills.technical.map((skill, index) => (
+                        <li 
+                          key={index}
+                          className="text-gray-700 dark:text-gray-300"
+                        >
+                          {skill}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -48,7 +61,8 @@ TeamMemberDetail.propTypes = {
   name: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired,
+  skills: PropTypes.object.isRequired
 };
 
 export default TeamMemberDetail;
