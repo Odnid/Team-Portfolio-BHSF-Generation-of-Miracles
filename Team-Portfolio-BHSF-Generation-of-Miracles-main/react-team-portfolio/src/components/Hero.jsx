@@ -11,8 +11,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-secondary-500/10 dark:from-primary-900/30 dark:to-secondary-900/30"></div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900"> 
+    <div className="absolute inset-0 bg-gradient-to-b from-gray-400/30 to-secondary-10/10 dark:from-primary-900/5 dark:to-secondary-900/5"></div>
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-3xl mx-auto px-4">
           <h1 

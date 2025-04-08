@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Team from './components/Team'
 import Contact from './components/Contact'
 import TeamMemberDetail from './components/TeamMemberDetail'
+import Footer from './components/Footer'
 import teamData from './data/teamData'
 import './App.css'
 
@@ -18,6 +19,7 @@ function App() {
               <Hero />
               <Team />
               <Contact />
+              <Footer />
             </>
           } />
           {teamData.map(member => (

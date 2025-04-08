@@ -30,7 +30,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-lg">
+    <nav className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-lg">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="text-2xl font-display font-bold">

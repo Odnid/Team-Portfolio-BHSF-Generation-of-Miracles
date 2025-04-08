@@ -1,12 +1,102 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
 const TeamMemberDetail = ({ name, role, description, image, skills, projects }) => {
+  const particlesInit = useCallback(async engine => {
+    await loadSlim(engine);
+  }, []);
+
+  const particlesOptions = {
+    particles: {
+      number: {
+        value: 80,
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      },
+      color: {
+        value: ["#6366f1", "#818cf8", "#4f46e5"]
+      },
+      shape: {
+        type: "circle"
+      },
+      opacity: {
+        value: 0.3,
+        random: true,
+        anim: {
+          enable: true,
+          speed: 1,
+          opacity_min: 0.2,
+          sync: false
+        }
+      },
+      size: {
+        value: 4,
+        random: true,
+        anim: {
+          enable: true,
+          speed: 2,
+          size_min: 2,
+          sync: false
+        }
+      },
+      move: {
+        enable: true,
+        speed: 1.5,
+        direction: "none",
+        random: true,
+        straight: false,
+        out_mode: "bounce",
+        bounce: true,
+      },
+      links: {
+        enable: true,
+        distance: 150,
+        color: "#6366f1",
+        opacity: 0.3,
+        width: 1.5
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "bubble"
+        },
+        onclick: {
+          enable: true,
+          mode: "push"
+        },
+        resize: true
+      },
+      modes: {
+        bubble: {
+          distance: 200,
+          size: 6,
+          duration: 0.3,
+          opacity: 0.8,
+          speed: 3
+        },
+        push: {
+          particles_nb: 4
+        }
+      }
+    },
+    retina_detect: true,
+    fullScreen: {
+      enable: false,
+      zIndex: 0
+    }
+  };
+
   useEffect(() => {
-    // Initialize AOS
     AOS.init({
       duration: 800,
       once: true,
@@ -30,14 +120,21 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
       </div>
 
       {/* Profile Section */}
-      <section className="pt-32 pb-10 bg-white dark:bg-gray-800">
-        <div className="container mx-auto px-3">
+      <section className="pt-32 pb-10 bg-white dark:bg-gray-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-white/80 dark:from-primary-900/20 dark:to-gray-800/90"></div>
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          options={particlesOptions}
+          className="absolute inset-0"
+        />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto">
             <main className="py-20">
               <div className="flex justify-center items-center h-full">
                 <div className="text-center">
                   <div className="flex justify-center mb-8">
-                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-500 dark:border-primary-400">
+                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-500 dark:border-primary-400 relative z-10">
                       <img 
                         src={image} 
                         alt={name} 
@@ -127,7 +224,6 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
                 <span className="text-white">Portfolio</span>
               </span>
             </div>
-            <p className="text-gray-400">&copy; 2025 Team Portfolio. All rights reserved.</p>
           </div>
         </div>
       </footer>
@@ -141,13 +237,7 @@ TeamMemberDetail.propTypes = {
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   skills: PropTypes.object.isRequired,
-  projects: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      technologies: PropTypes.arrayOf(PropTypes.string).isRequired
-    })
-  )
+  projects: PropTypes.array
 };
 
 export default TeamMemberDetail;

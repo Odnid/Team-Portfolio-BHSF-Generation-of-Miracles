@@ -38,3 +38,19 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Footer styles */
+.font-display {
+  font-family: 'Inter', sans-serif;
+}
+
+.text-primary-500 {
+  color: #3b82f6; /* Tailwind blue-500 */
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-gray-950 {
+    background-color: #030712; /* Tailwind gray-950 */
+  }
+}
