@@ -70,7 +70,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto text-center" data-aos="fade-up">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Brief Introduction</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              We are a group of Bachelor of Science in Information Technology (BSIT) students from Cavite State University – Imus Campus, driven by curiosity and a passion for learning. As we explore the world of web development, we aim to sharpen our skills, build meaningful projects, and grow together as aspiring developers.
+            We are a group of Bachelor of Science in Information Technology (BSIT) students from Cavite State University – Imus Campus, driven by curiosity and a passion for learning. As we explore the world of web development, we aim to sharpen our skills, build meaningful projects, and grow together as aspiring developers.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-8">
             This portfolio showcases our journey, creativity, and commitment to continuous improvement in the ever-evolving tech landscape.

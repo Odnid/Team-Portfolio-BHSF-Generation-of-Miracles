@@ -35,36 +35,14 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#home" className="text-gray-400 hover:text-indigo-400 transition-colors duration-300">Home</a></li>
               <li><a href="#team" className="text-gray-400 hover:text-indigo-400 transition-colors duration-300">Team</a></li>
-              <li><a href="#projects" className="text-gray-400 hover:text-indigo-400 transition-colors duration-300">Projects</a></li>
               <li><a href="#contact" className="text-gray-400 hover:text-indigo-400 transition-colors duration-300">Contact</a></li>
             </ul>
           </div>
           
-          {/* Column 3: Newsletter */}
+          {/* Column 3: Mission Statement */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">Stay Updated</h3>
-            {!subscribed ? (
-              <form onSubmit={handleSubscribe} className="flex flex-col space-y-2">
-                <input 
-                  type="email" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email" 
-                  className="bg-gray-800 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  required
-                />
-                <button 
-                  type="submit"
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded transition-colors duration-300"
-                >
-                  Subscribe
-                </button>
-              </form>
-            ) : (
-              <div className="text-green-400 py-2">
-                Thank you for subscribing!
-              </div>
-            )}
+            <h3 className="text-white font-bold text-lg mb-4">Our Mission</h3>
+            <p className="text-gray-400 mb-4">We strive to create innovative digital solutions that empower businesses and individuals to achieve their goals through cutting-edge technology and exceptional user experiences.</p>
           </div>
         </div>
         
@@ -111,3 +89,17 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// Column 3: Mission Statement
+<div>
+  <h3 className="text-white font-bold text-lg mb-4">Our Mission</h3>
+  <p className="text-gray-400 mb-4">We strive to create innovative digital solutions that empower businesses and individuals to achieve their goals through cutting-edge technology and exceptional user experiences.</p>
+  <div className="flex space-x-4">
+    <a href="#" className="text-gray-400 hover:text-indigo-400 transition-colors duration-300">
+      <span className="sr-only">LinkedIn</span>
+      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+    </a>
+  </div>
+</div>
