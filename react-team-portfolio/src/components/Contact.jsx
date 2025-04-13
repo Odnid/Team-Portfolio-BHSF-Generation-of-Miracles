@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -9,6 +10,8 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
   
   useEffect(() => {
     AOS.init({
@@ -22,17 +25,52 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real app, you would send this data to your backend
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      await emailjs.send(
+        'service_y0074jm',
+        'template_nyvxmhr',  // Replace this with your actual template ID from EmailJS
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Generation of Miracles Team',
+          subject: `Portfolio Inquiry from ${formData.name}`,
+          template_params: {
+            name: formData.name,
+            email: formData.email,
+            message: `Dear Generation of Miracles Team,
+
+I hope this message finds you well. I came across your portfolio website and would like to get in touch.
+
+${formData.message}
+
+Thank you for your time. I look forward to your response.
+
+Best regards,
+${formData.name}
+Email: ${formData.email}`
+          }
+        },
+        'jFxcLs_bBTrI-390E'
+      );
+
+      setIsSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
+    } catch (err) {
+      setError('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -112,6 +150,11 @@ const Contact = () => {
             
             {/* Contact Form */}
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md" data-aos="fade-left">
+              {error && (
+                <div className="mb-4 p-4 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-lg">
+                  {error}
+                </div>
+              )}
               {isSubmitted ? (
                 <div className="h-full flex items-center justify-center">
                   <div className="text-center">
@@ -173,9 +216,10 @@ const Contact = () => {
                   
                   <button
                     type="submit"
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 px-4 rounded-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    disabled={isSubmitting}
+                    className={`w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 px-4 rounded-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
                   >
-                    SUBMIT
+                    {isSubmitting ? 'SENDING...' : 'SUBMIT'}
                   </button>
                 </form>
               )}

@@ -100,20 +100,7 @@ const Team = () => {
           )}
         </div>
         
-        {filteredTeam.length > 0 && (
-          <div className="mt-16 text-center" data-aos="fade-up" data-aos-delay="300">
-            <p className="text-gray-600 dark:text-gray-400 mb-6">Interested in joining our team?</p>
-            <a
-              href="#contact"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-300"
-            >
-              <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Get in Touch
-            </a>
-          </div>
-        )}
+
       </div>
     </section>
   );

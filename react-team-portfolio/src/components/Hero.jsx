@@ -64,7 +64,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4 justify-center">
               <a 
                 href="#team" 
-                className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg transition-all duration-300 inline-block font-semibold shadow-lg hover:shadow-primary-500/30 transform hover:-translate-y-1"
+                className="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 border border-primary-200 dark:border-gray-700 px-8 py-3 rounded-lg transition-all duration-300 inline-block font-semibold shadow-lg hover:shadow-gray-300/30 dark:hover:shadow-gray-900/30 transform hover:-translate-y-1"
               >
                 Meet Our Team
               </a>
