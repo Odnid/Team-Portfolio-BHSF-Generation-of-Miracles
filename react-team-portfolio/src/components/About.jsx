@@ -68,12 +68,12 @@ const About = () => {
         <div className="flex flex-col items-center mb-20">
           {/* About content */}
           <div className="max-w-3xl mx-auto text-center" data-aos="fade-up">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Our Mission</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Brief Introduction</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              At Generation of Miracles, we are dedicated to transforming ideas into exceptional digital experiences. We work closely with our clients to understand their unique challenges and deliver tailored solutions that drive meaningful results.
+              We are a group of Bachelor of Science in Information Technology (BSIT) students from Cavite State University – Imus Campus, driven by curiosity and a passion for learning. As we explore the world of web development, we aim to sharpen our skills, build meaningful projects, and grow together as aspiring developers.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-8">
-              Our team of experts combines technical excellence with creative thinking to build innovative applications, websites, and digital products that help our clients stand out in today's competitive landscape.
+            This portfolio showcases our journey, creativity, and commitment to continuous improvement in the ever-evolving tech landscape.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
@@ -83,7 +83,7 @@ const About = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-gray-700 dark:text-gray-300">Web Development</span>
+                <span className="text-gray-700 dark:text-gray-300">Front End</span>
               </div>
               <div className="flex items-center justify-center">
                 <div className="flex-shrink-0 mr-2">
@@ -91,7 +91,7 @@ const About = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-gray-700 dark:text-gray-300">Mobile Apps</span>
+                <span className="text-gray-700 dark:text-gray-300">Backend</span>
               </div>
               <div className="flex items-center justify-center">
                 <div className="flex-shrink-0 mr-2">
@@ -107,7 +107,7 @@ const About = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-gray-700 dark:text-gray-300">DevOps</span>
+                <span className="text-gray-700 dark:text-gray-300">Quality Assurance</span>
               </div>
             </div>
           </div>
