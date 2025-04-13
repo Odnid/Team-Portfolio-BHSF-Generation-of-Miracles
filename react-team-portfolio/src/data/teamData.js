@@ -5,6 +5,11 @@ const teamData = [
     role: 'Project Manager',
     description: 'Passionate about Web Development, User Experience, and design',
     image: '/img/dominguez.jpg',
+    social: {
+      github: 'https://github.com/dindo-dominguez',
+      linkedin: 'https://linkedin.com/in/dindo-dominguez',
+      twitter: 'https://twitter.com/dindo_dominguez'
+    },
     skills: {
       technical: [
         { name: 'Front-End Development', mastery: 85 },
@@ -49,6 +54,10 @@ const teamData = [
     role: 'UI/UX Designer',
     description: 'Creating beautiful and intuitive user experiences.',
     image: '/img/aguilon.jpg',
+    social: {
+      github: 'https://github.com/adriane-aguilon',
+      linkedin: 'https://linkedin.com/in/adriane-aguilon'
+    },
     skills: {
       design: [
         { name: 'User Interface Design', mastery: 90 },
@@ -76,6 +85,10 @@ const teamData = [
     role: 'Fullstack Web Developer',
     description: 'Building robust and scalable backend solutions.',
     image: '/img/dawal.jpg',
+    social: {
+      github: 'https://github.com/giullian-dawal',
+      linkedin: 'https://linkedin.com/in/giullian-dawal'
+    },
     skills: {
       technical: [
         { name: 'Cybersecurity', mastery: 75 },
@@ -109,6 +122,10 @@ const teamData = [
     role: 'Frontend Developer',
     description: 'Crafting responsive and user-friendly interfaces.',
     image: '/img/factor.jpg',
+    social: {
+      github: 'https://github.com/francis-factor',
+      linkedin: 'https://linkedin.com/in/francis-factor'
+    },
     skills: {
       technical: [
         { name: 'Modern JavaScript Frameworks', mastery: 90 },
@@ -142,6 +159,10 @@ const teamData = [
     role: 'DevOps Engineer',
     description: 'Ensuring smooth and efficient deployment processes.',
     image: '/img/moral.jpg',
+    social: {
+      github: 'https://github.com/andrie-moral',
+      linkedin: 'https://linkedin.com/in/andrie-moral'
+    },
     skills: {
       technical: [
         { name: 'CI/CD Pipeline Implementation', mastery: 90 },
@@ -160,6 +181,81 @@ const teamData = [
         description: 'Implemented a fully automated deployment system reducing deployment time by 70%.',
         technologies: ['Jenkins', 'Docker', 'Kubernetes'],
         date: '2024 - 2025'
+      },
+      {
+        title: 'Bookhub - Library Management System',
+        description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
+        date: '2024 - Present',
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
+      }
+    ]
+  },
+  {
+    id: 'h-hernandez',
+    name: 'Harold Hernandez',
+    role: 'Front-end Developer',
+    description: 'Specializes in creating beautiful and responsive user interfaces.',
+    image: '/img/hernandez.jpg',
+    social: {
+      github: 'https://github.com/harold-hernandez',
+      linkedin: 'https://linkedin.com/in/harold-hernandez'
+    },
+    skills: {
+      technical: [
+        { name: 'Modern JavaScript Frameworks', mastery: 90 },
+        { name: 'Responsive Web Design', mastery: 85 },
+        { name: 'Performance Optimization', mastery: 80 }
+      ],
+      tools: [
+        { name: 'React & Redux', mastery: 90 },
+        { name: 'CSS Preprocessors', mastery: 85 },
+        { name: 'Testing Frameworks', mastery: 80 }
+      ]
+    },
+    projects: [
+      {
+        title: 'Social Media Dashboard',
+        description: 'Created an interactive dashboard for social media management and analytics.',
+        technologies: ['React', 'Redux', 'Chart.js'],
+        date: '2024 - 2025'
+      },
+      {
+        title: 'Bookhub - Library Management System',
+        description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
+        date: '2024 - Present',
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
+      }
+    ]
+  },
+  {
+    id: 'j-dawal',
+    name: 'John Dawal',
+    role: 'Backend Developer',
+    description: 'Focused on building secure and scalable server-side applications.',
+    image: '/img/dawal.jpg',
+    social: {
+      github: 'https://github.com/john-dawal',
+      linkedin: 'https://linkedin.com/in/john-dawal',
+      twitter: 'https://twitter.com/john_dawal'
+    },
+    skills: {
+      technical: [
+        { name: 'Cybersecurity', mastery: 75 },
+        { name: 'Network Management', mastery: 70 },
+        { name: 'Microservices Architecture', mastery: 75 }
+      ],
+      tools: [
+        { name: 'Pure PHP', mastery: 85 },
+        { name: 'TailwindCSS', mastery: 75 },
+        { name: 'React', mastery: 65 }
+      ]
+    },
+    projects: [
+      {
+        title: 'Theretalk',
+        description: 'Backend Developer of a mental health project during SHS years',
+        date: '2021 - 2022',
+        technologies: ['PHP', 'HTML/CSS']
       },
       {
         title: 'Bookhub - Library Management System',
