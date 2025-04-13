@@ -2,31 +2,44 @@ const teamData = [
   {
     id: 'd-dominguez',
     name: 'Dindo Dominguez',
-    role: 'Lead Developer',
-    description: 'Passionate about creating scalable and efficient solutions.',
+    role: 'Project Manager',
+    description: 'Passionate about Web Development, User Experience, and design',
     image: '/img/dominguez.jpg',
     skills: {
       technical: [
-        'Full-stack Development (Node.js, React, Python)',
-        'Database Design & Management',
-        'Cloud Infrastructure (AWS, Azure)'
+        { name: 'Front-End Development', mastery: 85 },
+        { name: 'UI/UX Design', mastery: 80 },
+        { name: 'Git Version Control', mastery: 75 }
       ],
       soft: [
         'Team Leadership',
         'Project Management',
         'Communication'
+      ],
+      tools: [
+        { name: 'Figma', mastery: 80 },
+        { name: 'Canva', mastery: 85 },
+        { name: 'VS Code', mastery: 75 }
       ]
     },
     projects: [
       {
-        title: 'E-commerce Platform',
-        description: 'Led the development of a scalable e-commerce platform serving over 100k monthly users.',
-        technologies: ['React', 'Node.js', 'MongoDB']
+        title: 'Keyboard-Racer',
+        description: 'A keyboard WPM tester inspired by Monkeytype and Typeracer',
+        technologies: ['HTML', 'CSS', 'Javascript'],
+        date: '2025 - Present'
       },
       {
-        title: 'Analytics Dashboard',
-        description: 'Designed and implemented a real-time analytics dashboard for business intelligence.',
-        technologies: ['Vue.js', 'Python', 'PostgreSQL']
+        title: 'Bookhub - Library Management System',
+        description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
+        date: '2024 - Present',
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
+      },
+      {
+        title: 'Personal Portfolio Page',
+        description: 'Created a professional-looking portfolio page with smooth animations and gorgeous designs that highlights my skills',
+        technologies: ['HTML', 'CSS', 'Javascript'],
+        date: '2025 - Present'
       }
     ]
   },
@@ -38,57 +51,55 @@ const teamData = [
     image: '/img/aguilon.jpg',
     skills: {
       design: [
-        'User Interface Design',
-        'User Research & Testing',
-        'Wireframing & Prototyping'
+        { name: 'User Interface Design', mastery: 90 },
+        { name: 'User Research & Testing', mastery: 85 },
+        { name: 'User Experience', mastery: 80 }
       ],
       tools: [
-        'Figma & Adobe XD',
-        'Sketch & InVision',
-        'Adobe Creative Suite'
+        { name: 'Figma & Adobe XD', mastery: 90 },
+        { name: 'Tailwind', mastery: 85 },
+        { name: 'Bootstrap', mastery: 80 }
       ]
     },
     projects: [
       {
-        title: 'Health App Redesign',
-        description: 'Led the complete redesign of a healthcare application, improving user satisfaction by 45%.',
-        technologies: ['UI Design', 'User Research', 'Prototyping']
-      },
-      {
-        title: 'E-commerce UX Optimization',
-        description: 'Optimized the checkout process for an e-commerce platform, resulting in a 25% increase in conversion rate.',
-        technologies: ['UX Design', 'A/B Testing', 'Analytics']
+        title: 'Bookhub - Library Management System',
+        description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
+        date: '2024 - Present',
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
       }
     ]
   },
   {
     id: 'g-dawal',
     name: 'Giullian Marco Dawal',
-    role: 'Backend Developer',
+    role: 'Fullstack Web Developer',
     description: 'Building robust and scalable backend solutions.',
     image: '/img/dawal.jpg',
     skills: {
       technical: [
-        'API Development',
-        'Database Optimization',
-        'Microservices Architecture'
+        { name: 'Cybersecurity', mastery: 75 },
+        { name: 'Network Management', mastery: 70 },
+        { name: 'Microservices Architecture', mastery: 75 }
       ],
       tools: [
-        'Node.js & Express',
-        'Python & Django',
-        'Docker & Kubernetes'
+        { name: 'Pure PHP', mastery: 85 },
+        { name: 'TailwindCSS', mastery: 75 },
+        { name: 'React', mastery: 65 }
       ]
     },
     projects: [
       {
-        title: 'Payment Processing System',
-        description: 'Developed a secure payment processing system handling thousands of transactions daily.',
-        technologies: ['Node.js', 'MongoDB', 'Redis']
+        title: 'Theretalk',
+        description: 'Backend Developer of a mental health project during SHS years',
+        date: '2021 - 2022',
+        technologies: ['PHP', 'HTML/CSS']
       },
       {
-        title: 'Content Management API',
-        description: 'Built a scalable API for content management used by multiple client applications.',
-        technologies: ['Python', 'PostgreSQL', 'GraphQL']
+        title: 'Bookhub - Library Management System',
+        description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
+        date: '2024 - Present',
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
       }
     ]
   },
@@ -100,26 +111,28 @@ const teamData = [
     image: '/img/factor.jpg',
     skills: {
       technical: [
-        'Modern JavaScript Frameworks',
-        'Responsive Web Design',
-        'Performance Optimization'
+        { name: 'Modern JavaScript Frameworks', mastery: 90 },
+        { name: 'Responsive Web Design', mastery: 85 },
+        { name: 'Performance Optimization', mastery: 80 }
       ],
       tools: [
-        'React & Redux',
-        'CSS Preprocessors',
-        'Testing Frameworks'
+        { name: 'React & Redux', mastery: 90 },
+        { name: 'CSS Preprocessors', mastery: 85 },
+        { name: 'Testing Frameworks', mastery: 80 }
       ]
     },
     projects: [
       {
         title: 'Social Media Dashboard',
         description: 'Created an interactive dashboard for social media management and analytics.',
-        technologies: ['React', 'Redux', 'Chart.js']
+        technologies: ['React', 'Redux', 'Chart.js'],
+        date: '2024 - 2025'
       },
       {
-        title: 'E-learning Platform',
-        description: 'Developed the frontend for an interactive e-learning platform with real-time features.',
-        technologies: ['Vue.js', 'Vuex', 'Socket.io']
+        title: 'Bookhub - Library Management System',
+        description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
+        date: '2024 - Present',
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
       }
     ]
   },
@@ -131,26 +144,28 @@ const teamData = [
     image: '/img/moral.jpg',
     skills: {
       technical: [
-        'CI/CD Pipeline Implementation',
-        'Infrastructure as Code',
-        'Cloud Services Management'
+        { name: 'CI/CD Pipeline Implementation', mastery: 90 },
+        { name: 'Infrastructure as Code', mastery: 85 },
+        { name: 'Cloud Services Management', mastery: 80 }
       ],
       tools: [
-        'Jenkins & GitHub Actions',
-        'Terraform & Ansible',
-        'AWS & Azure Services'
+        { name: 'Jenkins & GitHub Actions', mastery: 90 },
+        { name: 'Terraform & Ansible', mastery: 85 },
+        { name: 'AWS & Azure Services', mastery: 80 }
       ]
     },
     projects: [
       {
         title: 'Automated Deployment System',
         description: 'Implemented a fully automated deployment system reducing deployment time by 70%.',
-        technologies: ['Jenkins', 'Docker', 'Kubernetes']
+        technologies: ['Jenkins', 'Docker', 'Kubernetes'],
+        date: '2024 - 2025'
       },
       {
-        title: 'Cloud Migration Project',
-        description: 'Led the migration of on-premise infrastructure to cloud services with zero downtime.',
-        technologies: ['AWS', 'Terraform', 'Ansible']
+        title: 'Bookhub - Library Management System',
+        description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
+        date: '2024 - Present',
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
       }
     ]
   }

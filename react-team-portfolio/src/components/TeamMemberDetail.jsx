@@ -5,6 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import Footer from './Footer'; // Add this import statement
 
 const TeamMemberDetail = ({ name, role, description, image, skills, projects }) => {
   const particlesInit = useCallback(async engine => {
@@ -14,20 +15,20 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
   const particlesOptions = {
     particles: {
       number: {
-        value: 80,
+        value: 100,
         density: {
           enable: true,
           value_area: 800
         }
       },
       color: {
-        value: ["#6366f1", "#818cf8", "#4f46e5"]
+        value: ["#4f46e5", "#818cf8", "#6366f1", "#4338ca"]
       },
       shape: {
         type: "circle"
       },
       opacity: {
-        value: 0.3,
+        value: 0.5,
         random: true,
         anim: {
           enable: true,
@@ -37,7 +38,7 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
         }
       },
       size: {
-        value: 4,
+        value: 5,
         random: true,
         anim: {
           enable: true,
@@ -48,7 +49,7 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
       },
       move: {
         enable: true,
-        speed: 1.5,
+        speed: 2,
         direction: "none",
         random: true,
         straight: false,
@@ -58,8 +59,8 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
       links: {
         enable: true,
         distance: 150,
-        color: "#6366f1",
-        opacity: 0.3,
+        color: "#4f46e5",
+        opacity: 0.4,
         width: 1.5
       }
     },
@@ -79,7 +80,7 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
       modes: {
         bubble: {
           distance: 200,
-          size: 6,
+          size: 8,
           duration: 0.3,
           opacity: 0.8,
           speed: 3
@@ -97,40 +98,44 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
   };
 
   useEffect(() => {
+    // Initialize AOS
     AOS.init({
       duration: 800,
       once: true,
     });
+    
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
       {/* Back Navigation */}
-      <div className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-lg z-50">
-        <div className="container mx-auto px-6">
-          <div className="h-16 flex items-center">
+      <div className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow z-50">
+        <div className="container mx-auto px-4">
+          <div className="h-12 flex items-center">
             <Link to="/" className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              Back to Team
+              <span className="text-sm">Back to Team</span>
             </Link>
           </div>
         </div>
       </div>
 
       {/* Profile Section */}
-      <section className="pt-32 pb-10 bg-white dark:bg-gray-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-white/80 dark:from-primary-900/20 dark:to-gray-800/90"></div>
+      <section className="pt-24 pb-8 bg-white dark:bg-gray-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-600/20 via-primary-400/10 to-white/90 dark:from-primary-900/30 dark:via-primary-800/20 dark:to-gray-800/95"></div>
         <Particles
           id="tsparticles"
           init={particlesInit}
           options={particlesOptions}
           className="absolute inset-0"
         />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <main className="py-20">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-2xl mx-auto">
+            <main className="py-12">
               <div className="flex justify-center items-center h-full">
                 <div className="text-center">
                   <div className="flex justify-center mb-8">
@@ -146,7 +151,7 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
                       />
                     </div>
                   </div>
-                  <h1 className="text-4xl font-display font-bold mb-4 text-gray-900 dark:text-gray-100">{name}</h1>
+                  <h1 className="text-4xl font-display font-bold mb-8 text-gray-900 dark:text-gray-100">{name}</h1>
                   <p className="text-xl text-gray-700 dark:text-gray-300 mb-2">{role}</p>
                   <p className="text-gray-600 dark:text-gray-400">{description}</p>
                 </div>
@@ -157,28 +162,66 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-12 text-center text-gray-900 dark:text-gray-100" data-aos="fade-up">
+      <section className="min-h-screen flex items-center bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4 py-8">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-4xl font-display font-bold mb-8 text-center text-gray-900 dark:text-gray-100" data-aos="fade-up">
               Skills & Expertise
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {Object.entries(skills).map(([category, skillList], index) => (
-                <div key={category} className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
-                  <h3 className="text-xl font-bold mb-6 text-primary-500">
+                <div key={category} className="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-lg" data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
+                  <h3 className="text-xl font-bold mb-4 text-primary-500 flex items-center">
+                    <span className="mr-3">
+                      {category === 'technical' && (
+                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/>
+                        </svg>
+                      )}
+                      {category === 'soft' && (
+                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12zm-1-5a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1zm0-3a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clipRule="evenodd"/>
+                        </svg>
+                      )}
+                      {category === 'tools' && (
+                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10z" clipRule="evenodd"/>
+                        </svg>
+                      )}
+                      {category === 'design' && (
+                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M4 2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H4zm0 2h12v12H4V4zm3 3a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1zm0 3a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1z" clipRule="evenodd"/>
+                        </svg>
+                      )}
+                    </span>
                     {category.charAt(0).toUpperCase() + category.slice(1)}
                   </h3>
-                  <ul className="space-y-3 text-gray-700 dark:text-gray-200">
+                  <div className="space-y-4">
                     {skillList.map((skill, skillIndex) => (
-                      <li key={skillIndex} className="flex items-center space-x-2">
-                        <svg className="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                        </svg>
-                        <span>{skill}</span>
-                      </li>
+                      <div key={skillIndex}>
+                        {typeof skill === 'string' ? (
+                          <div className="text-base text-gray-700 dark:text-gray-300 py-1">
+                            {skill}
+                          </div>
+                        ) : (
+                          <div className="space-y-2">
+                            <div className="flex justify-between items-center">
+                              <span className="text-base text-gray-700 dark:text-gray-300">{skill.name}</span>
+                              <span className="text-sm font-semibold text-primary-500">{skill.mastery}%</span>
+                            </div>
+                            <div className="h-2 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+                              <div 
+                                className="h-full bg-gradient-to-r from-primary-600 to-primary-400 rounded-full transition-all duration-1000 ease-in-out transform origin-left"
+                                style={{ width: `${skill.mastery}%` }}
+                                data-aos="zoom-in-right"
+                                data-aos-duration="1000"
+                              />
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               ))}
             </div>
@@ -188,20 +231,25 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
 
       {/* Projects Section */}
       {projects && (
-        <section className="py-20 bg-white dark:bg-gray-800">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-display font-bold mb-12 text-center text-gray-900 dark:text-gray-100" data-aos="fade-up">
+        <section className="py-12 bg-white dark:bg-gray-800">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-4xl font-display font-bold mb-12 text-center text-gray-900 dark:text-gray-100" data-aos="fade-up">
                 Featured Projects
               </h2>
               <div className="space-y-12">
                 {projects.map((project, index) => (
-                  <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
-                    <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{project.title}</h3>
+                  <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-xl shadow p-5" data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{project.title}</h3>
+                      <span className="text-sm font-medium text-primary-500 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-3 py-1 rounded-full">
+                        {project.date}
+                      </span>
+                    </div>
                     <p className="text-gray-700 dark:text-gray-200 mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className="px-3 py-1 bg-primary-500/20 text-primary-500 rounded-full text-sm">
+                        <span key={techIndex} className="px-3 py-1 bg-primary-500/20 text-gray-700 dark:text-white rounded-full text-sm">
                           {tech}
                         </span>
                       ))}
@@ -214,19 +262,7 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects }) 
         </section>
       )}
 
-      {/* Footer */}
-      <footer className="bg-gray-900 py-12">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col items-center">
-            <div className="flex items-center mb-8">
-              <span className="text-2xl font-display font-bold">
-                <span className="text-primary-500">Team</span>
-                <span className="text-white">Portfolio</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
