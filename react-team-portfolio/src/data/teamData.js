@@ -6,9 +6,9 @@ const teamData = [
     description: 'Passionate about Web Development, User Experience, and design',
     image: '/img/dominguez.jpg',
     social: {
-      github: 'https://github.com/dindo-dominguez',
-      linkedin: 'https://linkedin.com/in/dindo-dominguez',
-      twitter: 'https://twitter.com/dindo_dominguez'
+      github: 'https://github.com/Odnid',
+      facebook: 'https://www.facebook.com/dindo.dominguez.2024',
+
     },
     skills: {
       technical: [
@@ -56,7 +56,9 @@ const teamData = [
     image: '/img/aguilon.jpg',
     social: {
       github: 'https://github.com/adriane-aguilon',
-      linkedin: 'https://linkedin.com/in/adriane-aguilon'
+      facebook: 'https://facebook.com/adriane.aguilon',
+      
+      
     },
     skills: {
       design: [
@@ -83,17 +85,18 @@ const teamData = [
     id: 'g-dawal',
     name: 'Giullian Marco Dawal',
     role: 'Fullstack Web Developer',
-    description: 'Building robust and scalable backend solutions.',
+    description: 'Building one app at a time.',
     image: '/img/dawal.jpg',
     social: {
-      github: 'https://github.com/giullian-dawal',
-      linkedin: 'https://linkedin.com/in/giullian-dawal'
+      github: 'https://github.com/R-A9',
+      facebook: 'https://www.facebook.com/srtnin4r',
+
     },
     skills: {
       technical: [
         { name: 'Cybersecurity', mastery: 75 },
         { name: 'Network Management', mastery: 70 },
-        { name: 'Microservices Architecture', mastery: 75 }
+
       ],
       tools: [
         { name: 'Pure PHP', mastery: 85 },
@@ -124,7 +127,8 @@ const teamData = [
     image: '/img/factor.jpg',
     social: {
       github: 'https://github.com/francis-factor',
-      linkedin: 'https://linkedin.com/in/francis-factor'
+      facebook: 'https://facebook.com/francis.factor',
+
     },
     skills: {
       technical: [
@@ -160,8 +164,10 @@ const teamData = [
     description: 'Ensuring smooth and efficient deployment processes.',
     image: '/img/moral.jpg',
     social: {
-      github: 'https://github.com/andrie-moral',
-      linkedin: 'https://linkedin.com/in/andrie-moral'
+      github: 'https://github.com/andriemoral27',
+      facebook: 'https://facebook.com/andrie.moral',
+
+     
     },
     skills: {
       technical: [
@@ -198,7 +204,9 @@ const teamData = [
     image: '/img/hernandez.jpg',
     social: {
       github: 'https://github.com/harold-hernandez',
-      linkedin: 'https://linkedin.com/in/harold-hernandez'
+      facebook: 'https://facebook.com/harold.hernandez',
+
+      
     },
     skills: {
       technical: [
@@ -235,8 +243,9 @@ const teamData = [
     image: '/img/dawal.jpg',
     social: {
       github: 'https://github.com/john-dawal',
-      linkedin: 'https://linkedin.com/in/john-dawal',
-      twitter: 'https://twitter.com/john_dawal'
+      facebook: 'https://facebook.com/john.dawal',
+
+
     },
     skills: {
       technical: [

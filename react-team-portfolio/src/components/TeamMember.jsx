@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { FaGithub, FaFacebook, FaDiscord, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
-const TeamMember = ({ id, name, role, description, image, delay }) => {
+const TeamMember = ({ id, name, role, description, image, social, delay }) => {
   return (
     <div className="group" data-aos="fade-up" data-aos-delay={delay}>
       <Link 
@@ -18,6 +19,7 @@ const TeamMember = ({ id, name, role, description, image, delay }) => {
           <p className="text-gray-700 dark:text-gray-300">{role}</p>
           <p className="mt-4 text-gray-600 dark:text-gray-400">{description}</p>
 
+         
         </div>
       </Link>
     </div>
@@ -30,6 +32,7 @@ TeamMember.propTypes = {
   role: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  social: PropTypes.object,
   delay: PropTypes.number
 };
 

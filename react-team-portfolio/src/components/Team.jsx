@@ -86,6 +86,7 @@ const Team = () => {
                 role={member.role}
                 description={member.description}
                 image={member.image}
+                social={member.social}
                 delay={(index + 1) * 100}
               />
             ))
