@@ -34,8 +34,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="text-2xl font-display font-bold">
-            <span className="text-indigo-600 dark:text-indigo-400">Generation of</span>
-            <span className="text-indigo-600 dark:text-indigo-400"> Miracles</span>
+          <img src="/img/logo.png" alt="Generation of Miracles Logo" className="h-16 w-16 mr-3" />
           </Link>
           <div className="flex items-center space-x-8">
             <div className="flex space-x-8">
