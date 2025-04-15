@@ -20,7 +20,7 @@ const About = () => {
         </svg>
       ),
       title: "Innovation",
-      description: "We constantly push boundaries and explore new technologies to deliver cutting-edge solutions."
+      description: "We are students of the emerging technologies and we are also learning new things every day. Putting the things that we learn into the our studies to be able to ride the waves of innovation."
     },
     {
       icon: (
@@ -29,7 +29,7 @@ const About = () => {
         </svg>
       ),
       title: "Communication",
-      description: "We believe in transparent, open communication with our clients throughout every project."
+      description: "We have been brought together by our passion for technology and information. We were once divided but was united for the same goal and challenges that we can conquer faster when we are a team. Giving us excellent teamwork and open minded communications."
     },
     {
       icon: (
@@ -38,7 +38,7 @@ const About = () => {
         </svg>
       ),
       title: "Speed",
-      description: "We deliver high-quality solutions efficiently, ensuring quick turnaround without compromising quality."
+      description: "We value our time and respect each and everyone of us. So we manage our time efficiently to achieve and meet the deadline for our everyday meets. Delivering high-quality solutions efficiently, ensuring quick turnaround without compromising quality.."
     },
     {
       icon: (
@@ -47,7 +47,7 @@ const About = () => {
         </svg>
       ),
       title: "Security",
-      description: "We prioritize the security and privacy of our clients' data and implement robust protection measures."
+      description: "The security measures that we have learned from our professors have proven to be a good start but we have further improve the security of our works so that you can be assured that your data and privacy will always be in good hands because your safety is our top priority."
     }
   ];
 
@@ -144,19 +144,19 @@ const About = () => {
         <div className="mt-20 bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg" data-aos="fade-up">
           <div className="grid grid-cols-2 md:grid-cols-4">
             <div className="p-8 text-center border-r border-b md:border-b-0 border-gray-200 dark:border-gray-700">
-              <div className="text-4xl font-bold text-primary-500 dark:text-primary-400 mb-2">25+</div>
+              <div className="text-4xl font-bold text-primary-500 dark:text-primary-400 mb-2">3+</div>
               <div className="text-gray-600 dark:text-gray-400">Projects Completed</div>
             </div>
             <div className="p-8 text-center border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-700">
-              <div className="text-4xl font-bold text-primary-500 dark:text-primary-400 mb-2">15+</div>
+              <div className="text-4xl font-bold text-primary-500 dark:text-primary-400 mb-2">5+</div>
               <div className="text-gray-600 dark:text-gray-400">Happy Clients</div>
             </div>
             <div className="p-8 text-center border-r border-gray-200 dark:border-gray-700">
-              <div className="text-4xl font-bold text-primary-500 dark:text-primary-400 mb-2">5+</div>
+              <div className="text-4xl font-bold text-primary-500 dark:text-primary-400 mb-2">1+</div>
               <div className="text-gray-600 dark:text-gray-400">Years Experience</div>
             </div>
             <div className="p-8 text-center">
-              <div className="text-4xl font-bold text-primary-500 dark:text-primary-400 mb-2">7</div>
+              <div className="text-4xl font-bold text-primary-500 dark:text-primary-400 mb-2">5</div>
               <div className="text-gray-600 dark:text-gray-400">Team Members</div>
             </div>
           </div>
