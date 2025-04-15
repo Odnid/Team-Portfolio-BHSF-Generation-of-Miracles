@@ -195,85 +195,9 @@ const teamData = [
         technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
       }
     ]
-  },
-  {
-    id: 'h-hernandez',
-    name: 'Harold Hernandez',
-    role: 'Front-end Developer',
-    description: 'Specializes in creating beautiful and responsive user interfaces.',
-    image: '/img/hernandez.jpg',
-    social: {
-      github: 'https://github.com/harold-hernandez',
-      facebook: 'https://facebook.com/harold.hernandez',
-
-      
-    },
-    skills: {
-      technical: [
-        { name: 'Modern JavaScript Frameworks', mastery: 90 },
-        { name: 'Responsive Web Design', mastery: 85 },
-        { name: 'Performance Optimization', mastery: 80 }
-      ],
-      tools: [
-        { name: 'React & Redux', mastery: 90 },
-        { name: 'CSS Preprocessors', mastery: 85 },
-        { name: 'Testing Frameworks', mastery: 80 }
-      ]
-    },
-    projects: [
-      {
-        title: 'Social Media Dashboard',
-        description: 'Created an interactive dashboard for social media management and analytics.',
-        technologies: ['React', 'Redux', 'Chart.js'],
-        date: '2024 - 2025'
-      },
-      {
-        title: 'Bookhub - Library Management System',
-        description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
-        date: '2024 - Present',
-        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
-      }
-    ]
-  },
-  {
-    id: 'j-dawal',
-    name: 'John Dawal',
-    role: 'Backend Developer',
-    description: 'Focused on building secure and scalable server-side applications.',
-    image: '/img/dawal.jpg',
-    social: {
-      github: 'https://github.com/john-dawal',
-      facebook: 'https://facebook.com/john.dawal',
-
-
-    },
-    skills: {
-      technical: [
-        { name: 'Cybersecurity', mastery: 75 },
-        { name: 'Network Management', mastery: 70 },
-        { name: 'Microservices Architecture', mastery: 75 }
-      ],
-      tools: [
-        { name: 'Pure PHP', mastery: 85 },
-        { name: 'TailwindCSS', mastery: 75 },
-        { name: 'React', mastery: 65 }
-      ]
-    },
-    projects: [
-      {
-        title: 'Theretalk',
-        description: 'Backend Developer of a mental health project during SHS years',
-        date: '2021 - 2022',
-        technologies: ['PHP', 'HTML/CSS']
-      },
-      {
-        title: 'Bookhub - Library Management System',
-        description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
-        date: '2024 - Present',
-        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
-      }
-    ]
   }
+ 
+ 
 ];
 
 export default teamData;

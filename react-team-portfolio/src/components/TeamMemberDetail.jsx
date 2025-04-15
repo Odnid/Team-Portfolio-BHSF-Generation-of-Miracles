@@ -109,6 +109,14 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects, so
     
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
+
+    // Check for saved theme preference or system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, []);
 
   return (
