@@ -291,6 +291,18 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects, so
                         </span>
                       ))}
                     </div>
+                    {project.link && (
+                  <div className="text-right">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-full text-sm transition"
+                    >
+                      View
+                    </a>
+                  </div>
+                )}
                   </div>
                 ))}
               </div>

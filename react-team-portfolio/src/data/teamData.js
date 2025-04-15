@@ -32,19 +32,22 @@ const teamData = [
         title: 'Keyboard-Racer',
         description: 'A keyboard WPM tester inspired by Monkeytype and Typeracer',
         technologies: ['HTML', 'CSS', 'Javascript'],
-        date: '2025 - Present'
+        date: '2025 - Present',
+        link: 'https://keyboard-racer.vercel.app'
       },
       {
         title: 'Bookhub - Library Management System',
         description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
         date: '2024 - Present',
-        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap'],
+        link: 'https://bookhub-reimagined.vercel.app'
       },
       {
         title: 'Personal Portfolio Page',
         description: 'Created a professional-looking portfolio page with smooth animations and gorgeous designs that highlights my skills',
         technologies: ['HTML', 'CSS', 'Javascript'],
-        date: '2025 - Present'
+        date: '2025 - Present',
+        link: 'https://dominguez-professional-portfolio-zeta-lovat.vercel.app'
       }
     ]
   },
@@ -77,7 +80,8 @@ const teamData = [
         title: 'Bookhub - Library Management System',
         description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
         date: '2024 - Present',
-        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap'],
+        link: 'https://bookhub-reimagined.vercel.app'
       }
     ]
   },
@@ -109,13 +113,15 @@ const teamData = [
         title: 'Theretalk',
         description: 'Backend Developer of a mental health project during SHS years',
         date: '2021 - 2022',
-        technologies: ['PHP', 'HTML/CSS']
+        technologies: ['PHP', 'HTML/CSS'],
+        link: 'https://theretalk-r-a9s-projects.vercel.app'
       },
       {
         title: 'Bookhub - Library Management System',
         description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
         date: '2024 - Present',
-        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap'],
+        link: 'https://bookhub-reimagined.vercel.app'
       }
     ]
   },
@@ -147,13 +153,15 @@ const teamData = [
         title: 'Social Media Dashboard',
         description: 'Created an interactive dashboard for social media management and analytics.',
         technologies: ['React', 'Redux', 'Chart.js'],
-        date: '2024 - 2025'
+        date: '2024 - 2025',
+        link: 'https://example.com/social-media-dashboard'
       },
       {
         title: 'Bookhub - Library Management System',
         description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
         date: '2024 - Present',
-        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap'],
+        link: 'https://bookhub-reimagined.vercel.app'
       }
     ]
   },
@@ -186,13 +194,15 @@ const teamData = [
         title: 'Automated Deployment System',
         description: 'Implemented a fully automated deployment system reducing deployment time by 70%.',
         technologies: ['Jenkins', 'Docker', 'Kubernetes'],
-        date: '2024 - 2025'
+        date: '2024 - 2025',
+        link: 'https://example.com/automated-deployment-system'
       },
       {
         title: 'Bookhub - Library Management System',
         description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',
         date: '2024 - Present',
-        technologies: ['PHP', 'HTML/CSS', 'Bootstrap']
+        technologies: ['PHP', 'HTML/CSS', 'Bootstrap'],
+        link: 'https://bookhub-reimagined.vercel.app'
       }
     ]
   }
