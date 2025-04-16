@@ -1,0 +1,174 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Footer styles */
+.font-display {
+  font-family: 'Inter', sans-serif;
+}
+
+.text-primary-500 {
+  color: #3b82f6; /* Tailwind blue-500 */
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-gray-950 {
+    background-color: #030712; /* Tailwind gray-950 */
+  }
+}
+
+/* Animation for floating elements */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(10px) translateX(-10px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0) translateX(0) rotate(0);
+  }
+}
+
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+/* Add to App.css */
+
+/* Smooth page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Enhanced animation for floating elements */
+@keyframes enhanced-float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0);
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) translateX(5px) rotate(2deg);
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    transform: translateY(0) translateX(10px) rotate(0);
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    transform: translateY(10px) translateX(5px) rotate(-2deg);
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    transform: translateY(0) translateX(0) rotate(0);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.animate-enhanced-float {
+  animation: enhanced-float 20s ease-in-out infinite;
+}
+
+/* Shimmering text effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, 
+    rgba(59, 130, 246, 0.8) 0%, 
+    rgba(99, 102, 241, 0.8) 25%, 
+    rgba(139, 92, 246, 0.8) 50%, 
+    rgba(99, 102, 241, 0.8) 75%, 
+    rgba(59, 130, 246, 0.8) 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 8s linear infinite;
+}
+
+/* Button hover effects */
+.btn-hover-effect {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-hover-effect:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-hover-effect:hover:before {
+  width: 300%;
+  height: 300%;
+}
