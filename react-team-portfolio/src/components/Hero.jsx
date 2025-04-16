@@ -15,7 +15,7 @@ const Hero = () => {
     AOS.init({
       duration: 800,
       once: true,
-      disable: 'mobile' // Performance optimization for mobile
+      
     });
     
     // Start animations after a short delay for better UX
