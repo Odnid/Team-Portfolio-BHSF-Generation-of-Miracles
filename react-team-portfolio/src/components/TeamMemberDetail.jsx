@@ -101,12 +101,14 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects, so
   useEffect(() => {
     // Initialize AOS
     AOS.init({
-      duration: 800,
+      duration: 800 ,
       once: true,
     });
     
     // Scroll to top when component mounts
-    window.scrollTo(0, 0);
+    setTimeout(() =>{
+    window.scrollTo({top:10,behavior:'instant'});
+  },50);
 
     // Check for saved theme preference or system preference
     const savedTheme = localStorage.getItem('theme');
