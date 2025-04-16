@@ -7,24 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Hero = () => {
   const [isAnimated, setIsAnimated] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
   const heroRef = useRef(null);
   const buttonRef = useRef(null);
-  
-  // Performance optimization: Debounce mouse movement handler
-  const handleMouseMove = useCallback((e) => {
-    if (!heroRef.current) return;
-    
-    const rect = heroRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = (e.clientY - rect.top) / rect.height;
-    
-    // Only update state if there's significant movement
-    if (Math.abs(x - mousePosition.x) > 0.01 || Math.abs(y - mousePosition.y) > 0.01) {
-      setMousePosition({ x, y });
-    }
-  }, [mousePosition]);
   
   useEffect(() => {
     AOS.init({
@@ -39,24 +24,10 @@ const Hero = () => {
       setIsLoaded(true);
     }, 300);
     
-    // Performance optimization: Use passive listeners
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    
-    // Add focus tracking for accessibility
-    const handleFocus = () => {
-      if (buttonRef.current && document.activeElement === buttonRef.current) {
-        buttonRef.current.classList.add('ring-2', 'ring-indigo-400', 'ring-offset-2');
-      }
-    };
-    
-    window.addEventListener('focus', handleFocus, true);
-    
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('focus', handleFocus, true);
     };
-  }, [handleMouseMove]);
+  }, []);
 
   // Performance optimization: Memoize particle options
   const particleOptions = useMemo(() => ({
@@ -314,68 +285,179 @@ const Hero = () => {
         )}
       </AnimatePresence>
       
-      {/* Animated flowing ribbons with parallax effect */}
-      <div className="absolute inset-0 opacity-40 dark:opacity-30 overflow-hidden pointer-events-none">
-        <div 
-          className="absolute w-[150%] h-[50%] animate-wave" 
-          style={{
-            top: `${30 + mousePosition.y * 10}%`,
-            left: `-25%`,
-            background: `linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.1) 30%, rgba(99, 102, 241, 0.2) 50%, rgba(99, 102, 241, 0.1) 70%, transparent 100%)`,
-            transform: `rotate(${-5 + mousePosition.y * 2}deg) translateX(${mousePosition.x * 5}px)`,
-            transformOrigin: 'center center',
-            transition: 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-          }}
-        ></div>
-        <div 
-          className="absolute w-[150%] h-[30%] animate-wave-reverse animation-delay-1000" 
-          style={{
-            top: `${60 - mousePosition.y * 5}%`,
-            left: `-25%`,
-            background: `linear-gradient(90deg, transparent 0%, rgba(67, 56, 202, 0.05) 20%, rgba(67, 56, 202, 0.1) 50%, rgba(67, 56, 202, 0.05) 80%, transparent 100%)`,
-            transform: `rotate(${3 - mousePosition.y * 1}deg) translateX(${-mousePosition.x * 3}px)`,
-            transformOrigin: 'center center',
-            transition: 'transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-          }}
-        ></div>
-      </div>
-      
-      {/* Dynamic glow orbs with parallax effect */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div 
-          className="absolute w-[40vw] h-[40vw] rounded-full filter blur-[100px] animate-pulse-slow"
-          style={{
-            top: `${30 - mousePosition.y * 15}%`,
-            left: `${30 - mousePosition.x * 15}%`,
-            background: `radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0.05) 60%, transparent 100%)`,
-            transform: `scale(${1 + (mousePosition.x * 0.1)})`,
-            transition: 'transform 0.5s ease-out, top 0.5s ease-out, left 0.5s ease-out'
-          }}
-        ></div>
-        <div 
-          className="absolute w-[35vw] h-[35vw] rounded-full filter blur-[120px] animate-pulse-slower animation-delay-2000"
-          style={{
-            bottom: `${20 - mousePosition.y * 15}%`,
-            right: `${20 - mousePosition.x * 15}%`,
-            background: `radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(79, 70, 229, 0.05) 60%, transparent 100%)`,
-            transform: `scale(${1 + (mousePosition.y * 0.1)})`,
-            transition: 'transform 0.5s ease-out, bottom 0.5s ease-out, right 0.5s ease-out'
-          }}
-        ></div>
-      </div>
-      
-      {/* Advanced 3D mouse tracking effect */}
+      {/* Background mesh pattern */}
       <div 
-        className="absolute pointer-events-none z-10 h-56 w-56 opacity-30"
+        className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-20"
         style={{
-          left: `calc(${mousePosition.x * 100}% - 100px)`,
-          top: `calc(${mousePosition.y * 100}% - 100px)`,
-          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%)',
-          filter: 'blur(20px)',
-          transition: 'left 0.3s ease-out, top 0.3s ease-out, opacity 0.3s ease-out',
-          opacity: isAnimated ? 0.3 : 0
+          backgroundImage: 'radial-gradient(rgba(99, 102, 241, 0.18) 2px, transparent 2px)',
+          backgroundSize: '30px 30px'
         }}
-      ></div>
+      />
+      
+      {/* Dashboard-like grid background - more visible */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Horizontal grid lines */}
+        {[...Array(10)].map((_, index) => (
+          <motion.div
+            key={`h-line-${index}`}
+            className="absolute h-[2px] w-full bg-indigo-500/40 dark:bg-indigo-400/40 shadow-lg"
+            style={{ top: `${10 * (index + 1)}%` }}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 0.8, scaleX: 1 }}
+            transition={{ 
+              duration: 1.5, 
+              delay: 0.1 * index,
+              ease: "easeOut"
+            }}
+          />
+        ))}
+        
+        {/* Vertical grid lines */}
+        {[...Array(10)].map((_, index) => (
+          <motion.div
+            key={`v-line-${index}`}
+            className="absolute w-[2px] h-full bg-indigo-500/40 dark:bg-indigo-400/40 shadow-lg"
+            style={{ left: `${10 * (index + 1)}%` }}
+            initial={{ opacity: 0, scaleY: 0 }}
+            animate={{ opacity: 0.8, scaleY: 1 }}
+            transition={{ 
+              duration: 1.5, 
+              delay: 0.1 * index,
+              ease: "easeOut"
+            }}
+          />
+        ))}
+        
+        {/* Animated data points - larger, glowing, colorful */}
+        {[...Array(18)].map((_, index) => {
+          const x = 5 + Math.floor(Math.random() * 90);
+          const y = 5 + Math.floor(Math.random() * 90);
+          const size = 10 + Math.floor(Math.random() * 18);
+          const color = [
+            'bg-indigo-400',
+            'bg-purple-400',
+            'bg-pink-400',
+            'bg-blue-400',
+            'bg-cyan-400'
+          ][Math.floor(Math.random() * 5)];
+          const glow = [
+            'shadow-indigo-400/60',
+            'shadow-purple-400/60',
+            'shadow-pink-400/60',
+            'shadow-blue-400/60',
+            'shadow-cyan-400/60'
+          ][Math.floor(Math.random() * 5)];
+          
+          return (
+            <motion.div
+              key={`data-point-${index}`}
+              className={`absolute rounded-full ${color} ${glow}`}
+              style={{ 
+                left: `${x}%`, 
+                top: `${y}%`,
+                width: `${size}px`,
+                height: `${size}px`,
+                boxShadow: `0 0 16px 4px rgba(99,102,241,0.4)`
+              }}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ 
+                opacity: [0, 0.9, 0],
+                scale: [0, 1.2, 0]
+              }}
+              transition={{ 
+                duration: 2.5 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 5,
+                ease: "easeInOut"
+              }}
+            />
+          );
+        })}
+        {/* Animated floating blurred shapes */}
+        <motion.div
+          className="absolute rounded-full bg-indigo-400/30 blur-2xl"
+          style={{ width: '180px', height: '80px', top: '10%', left: '5%' }}
+          animate={{ x: [0, 600, 0], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute rounded-full bg-purple-500/30 blur-2xl"
+          style={{ width: '140px', height: '60px', bottom: '12%', right: '8%' }}
+          animate={{ x: [0, -500, 0], opacity: [0.2, 0.5, 0.2] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
+      
+      {/* Animated gradient orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Top left orb */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: 0.2,
+            y: [0, -20, 0, 20, 0],
+            x: [0, 20, 40, 20, 0]
+          }}
+          transition={{ 
+            duration: 20, 
+            repeat: Infinity,
+            ease: "easeInOut" 
+          }}
+          className="absolute w-[50vw] h-[50vw] rounded-full"
+          style={{
+            top: '-10%',
+            left: '-10%',
+            background: 'radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(99, 102, 241, 0.1) 70%, transparent 100%)',
+            filter: 'blur(80px)'
+          }}
+        />
+        
+        {/* Bottom right orb */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: 0.2,
+            y: [0, 20, 0, -20, 0],
+            x: [0, -20, -40, -20, 0]
+          }}
+          transition={{ 
+            duration: 25, 
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute w-[40vw] h-[40vw] rounded-full"
+          style={{
+            bottom: '-10%',
+            right: '-10%',
+            background: 'radial-gradient(circle, rgba(79, 70, 229, 0.3) 0%, rgba(79, 70, 229, 0.1) 70%, transparent 100%)',
+            filter: 'blur(80px)'
+          }}
+        />
+        
+        {/* Center orb */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: 0.2,
+            scale: [1, 1.1, 1, 0.9, 1]
+          }}
+          transition={{ 
+            duration: 15, 
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+          className="absolute w-[35vw] h-[35vw] rounded-full"
+          style={{
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            background: 'radial-gradient(circle, rgba(129, 140, 248, 0.3) 0%, rgba(129, 140, 248, 0.1) 70%, transparent 100%)',
+            filter: 'blur(80px)'
+          }}
+        />
+      </div>
       
       {/* Main content with framer-motion animations */}
       <div className="container mx-auto relative z-20 px-6">
@@ -457,60 +539,8 @@ const Hero = () => {
               </motion.a>
             </motion.div>
           </motion.div>
-          
-          {/* Animated illustration/graphic - visible on medium screens and up */}
-          <motion.div 
-            className="hidden md:block md:w-2/5"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ 
-              duration: 0.8,
-              delay: 0.3,
-              ease: [0, 0.71, 0.2, 1.01]
-            }}
-          >
-            <div className="relative">
-              {/* Abstract shapes that respond to mouse movement */}
-              <div 
-                className="absolute -top-20 -left-10 w-64 h-64 bg-indigo-500/10 rounded-full mix-blend-multiply filter blur-xl opacity-70"
-                style={{
-                  transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)`,
-                  transition: 'transform 0.6s cubic-bezier(0.17, 0.67, 0.83, 0.67)'
-                }}
-              ></div>
-              <div 
-                className="absolute top-20 left-20 w-72 h-72 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-xl opacity-70"
-                style={{
-                  transform: `translate(${-mousePosition.x * 30}px, ${-mousePosition.y * 30}px)`,
-                  transition: 'transform 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67)'
-                }}
-              ></div>
-              
-              {/* 3D rotating cube for visual interest */}
-              <div className="relative h-80 w-80 mx-auto perspective-800">
-                <div 
-                  className={`relative h-full w-full transform-style-3d ${isAnimated ? 'animate-slow-spin' : ''}`}
-                  style={{
-                    transform: `rotateX(${mousePosition.y * 20}deg) rotateY(${mousePosition.x * 20}deg)`,
-                    transition: 'transform 0.4s ease-out'
-                  }}
-                >
-                  {/* Cube faces */}
-                  <div className="absolute h-40 w-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-indigo-300/30 dark:border-indigo-700/30 bg-indigo-100/10 dark:bg-indigo-900/10 backdrop-blur-sm rounded-xl transform-style-3d rotate-cube-front"></div>
-                  <div className="absolute h-40 w-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-indigo-300/30 dark:border-indigo-700/30 bg-indigo-100/10 dark:bg-indigo-900/10 backdrop-blur-sm rounded-xl transform-style-3d rotate-cube-back"></div>
-                  <div className="absolute h-40 w-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-indigo-300/30 dark:border-indigo-700/30 bg-indigo-100/10 dark:bg-indigo-900/10 backdrop-blur-sm rounded-xl transform-style-3d rotate-cube-left"></div>
-                  <div className="absolute h-40 w-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-indigo-300/30 dark:border-indigo-700/30 bg-indigo-100/10 dark:bg-indigo-900/10 backdrop-blur-sm rounded-xl transform-style-3d rotate-cube-right"></div>
-                  <div className="absolute h-40 w-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-indigo-300/30 dark:border-indigo-700/30 bg-indigo-100/10 dark:bg-indigo-900/10 backdrop-blur-sm rounded-xl transform-style-3d rotate-cube-top"></div>
-                  <div className="absolute h-40 w-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-indigo-300/30 dark:border-indigo-700/30 bg-indigo-100/10 dark:bg-indigo-900/10 backdrop-blur-sm rounded-xl transform-style-3d rotate-cube-bottom"></div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
-      
-      {/* Enhanced scroll indicator */}
-      
       
       {/* Custom animation keyframes and tailwind extensions */}
       <style jsx>{`
