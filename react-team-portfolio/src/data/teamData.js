@@ -7,8 +7,7 @@ const teamData = [
     image: '/img/dominguez.jpg',
     social: {
       github: 'https://github.com/Odnid',
-      facebook: 'https://www.facebook.com/dindo.dominguez.2024',
-
+      facebook: 'https://www.facebook.com/dindo.dominguez.2024'
     },
     skills: {
       technical: [
@@ -59,9 +58,7 @@ const teamData = [
     image: '/img/aguilon.jpg',
     social: {
       github: 'https://github.com/adriane-aguilon',
-      facebook: 'https://facebook.com/adriane.aguilon',
-      
-      
+      facebook: 'https://facebook.com/adriane.aguilon'
     },
     skills: {
       design: [
@@ -93,19 +90,17 @@ const teamData = [
     image: '/img/dawal.jpg',
     social: {
       github: 'https://github.com/R-A9',
-      facebook: 'https://www.facebook.com/srtnin4r',
-
+      facebook: 'https://www.facebook.com/srtnin4r'
     },
     skills: {
       technical: [
         { name: 'Cybersecurity', mastery: 75 },
-        { name: 'Network Management', mastery: 70 },
-
+        { name: 'Network Management', mastery: 70 }
       ],
       tools: [
         { name: 'Pure PHP', mastery: 85 },
         { name: 'TailwindCSS', mastery: 75 },
-        { name: 'React', mastery: 65 }
+        { name: 'React', mastery: 45 }
       ]
     },
     projects: [
@@ -133,8 +128,7 @@ const teamData = [
     image: '/img/factor.jpg',
     social: {
       github: 'https://github.com/francis-factor',
-      facebook: 'https://facebook.com/francis.scp',
-
+      facebook: 'https://facebook.com/francis.scp'
     },
     skills: {
       technical: [
@@ -166,9 +160,7 @@ const teamData = [
     image: '/img/moral.jpg',
     social: {
       github: 'https://github.com/andriemoral27',
-      facebook: 'https://www.facebook.com/carla.cruz.7334/',
-
-     
+      facebook: 'https://www.facebook.com/carla.cruz.7334/'
     },
     skills: {
       technical: [
@@ -192,8 +184,6 @@ const teamData = [
       }
     ]
   }
- 
- 
 ];
 
 export default teamData;
