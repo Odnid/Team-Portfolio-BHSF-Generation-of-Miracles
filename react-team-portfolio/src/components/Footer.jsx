@@ -1,7 +1,28 @@
 import React from 'react';
+import {useLocation, useNavigate} from 'react-router-dom';
+import { scroller } from 'react-scroll';
 import { FaGithub, FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
+
+  const location= useLocation();
+  const navigate= useNavigate();
+  const handleNavClick = (sectionId) => {
+    if (location.pathname === '/') {
+      // Already on home page, scroll directly
+      scroller.scrollTo(sectionId, {
+        duration: 500,
+        smooth: true,
+        offset: -70, // optional: offset for sticky navbar
+      });
+    } else {
+      // Navigate to home page and scroll to section
+      navigate('/', { state: { scrollTo: sectionId } });
+      // The scrolling will be handled in a useEffect in the Home component
+    }
+  };
+
+  
   const currentYear = new Date().getFullYear();
 
   return (
@@ -25,10 +46,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-bold text-base mb-1">Quick Links</h3>
             <ul className="space-y-1 text-sm">
-              <li><a href="#home" className="text-gray-400 hover:text-indigo-400 transition-colors duration-300 block">Home</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-indigo-400 transition-colors duration-300 block">About</a></li>
-              <li><a href="#team" className="text-gray-400 hover:text-indigo-400 transition-colors duration-300 block">Team</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-indigo-400 transition-colors duration-300 block">Contact</a></li>
+              <li><button onClick={() => handleNavClick('home')} className="text-gray-400 hover:text-indigo-400 transition-colors duration-300 block">Home</button></li>
+              <li><button onClick={() => handleNavClick('about')} className="text-gray-400 hover:text-indigo-400 transition-colors duration-300 block">About</button></li>
+              <li><button onClick={() => handleNavClick('team')} className="text-gray-400 hover:text-indigo-400 transition-colors duration-300 block">Team</button></li>
+              <li><button onClick={() => handleNavClick('contact')} className="text-gray-400 hover:text-indigo-400 transition-colors duration-300 block">Contact</button></li>
             </ul>
           </div>
           {/* Column 3: Mission Statement */}
