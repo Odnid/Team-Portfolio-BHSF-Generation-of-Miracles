@@ -138,24 +138,17 @@ const teamData = [
     },
     skills: {
       technical: [
-        { name: 'Modern JavaScript Frameworks', mastery: 90 },
-        { name: 'Responsive Web Design', mastery: 85 },
-        { name: 'Performance Optimization', mastery: 80 }
+        { name: 'HTML', mastery: 90 },
+        { name: 'CSS', mastery: 90 },
+        { name: 'Javascript', mastery: 40 }
       ],
       tools: [
-        { name: 'React & Redux', mastery: 90 },
-        { name: 'CSS Preprocessors', mastery: 85 },
-        { name: 'Testing Frameworks', mastery: 80 }
+        { name: 'VS Code', mastery: 90 },
+        { name: 'TailwindCSS', mastery: 85 },
+        { name: 'Bootstrap', mastery: 80 }
       ]
     },
     projects: [
-      {
-        title: 'Social Media Dashboard',
-        description: 'Created an interactive dashboard for social media management and analytics.',
-        technologies: ['React', 'Redux', 'Chart.js'],
-        date: '2024 - 2025',
-        link: 'https://example.com/social-media-dashboard'
-      },
       {
         title: 'Bookhub - Library Management System',
         description: 'Currently an ongoing 3rd Year project for our Human Computer Interaction subject in CvSU - Imus.',

@@ -11,7 +11,7 @@ import './App.css'
 
 function App() {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900">
+    <div className="min-h-screen w-full bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900 no-horizontal-scroll">
       <Routes>
         <Route path="/" element={
           <>

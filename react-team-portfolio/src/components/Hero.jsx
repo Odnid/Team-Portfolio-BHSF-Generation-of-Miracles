@@ -287,7 +287,7 @@ const Hero = () => {
       
       {/* Background mesh pattern */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-20 max-w-full"
+        className="absolute inset-0 pointer-events-none opacity-10 dark:opacity-20"
         style={{
           backgroundImage: 'radial-gradient(rgba(99, 102, 241, 0.18) 2px, transparent 2px)',
           backgroundSize: '30px 30px'
@@ -377,13 +377,13 @@ const Hero = () => {
         <motion.div
           className="absolute rounded-full bg-indigo-400/30 blur-2xl"
           style={{ width: '180px', height: '80px', top: '10%', left: '5%' }}
-          animate={{ x: [0, '40vw', 0], opacity: [0.2, 0.4, 0.2] }}
+          animate={{ x: [0, 600, 0], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute rounded-full bg-purple-500/30 blur-2xl"
           style={{ width: '140px', height: '60px', bottom: '12%', right: '8%' }}
-          animate={{ x: [0, '-40vw', 0], opacity: [0.2, 0.5, 0.2] }}
+          animate={{ x: [0, -500, 0], opacity: [0.2, 0.5, 0.2] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
