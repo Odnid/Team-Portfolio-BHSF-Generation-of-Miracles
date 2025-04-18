@@ -101,8 +101,8 @@ const TeamMemberDetail = ({ name, role, description, image, skills, projects, so
   useEffect(() => {
     // Initialize AOS
     AOS.init({
-      duration: 800 ,
-      once: true,
+      duration: 800,
+      once: false,
     });
     
     // Scroll to top when component mounts
